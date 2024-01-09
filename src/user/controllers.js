@@ -16,6 +16,14 @@ const addUser = async (req, res) => {
   }
 };
 
+const login = async (req, res) => {
+  try {
+    console.log("hello from login");
+  } catch (error) {
+    res.status(500).json({ message: error.message, error: error });
+  }
+};
+
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.findAll();
@@ -29,4 +37,5 @@ const getAllUsers = async (req, res) => {
 module.exports = {
   addUser: addUser,
   getAllUsers: getAllUsers,
+  login: login,
 };
